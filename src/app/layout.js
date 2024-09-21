@@ -20,6 +20,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+
+        {/* Meta tags para compartilhar nas redes sociais */}
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content="/path/to/preview-image.jpg" />
+        <meta property="og:url" content="https://www.seusite.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#e4effa]`}
       >

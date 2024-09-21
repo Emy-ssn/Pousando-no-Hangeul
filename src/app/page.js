@@ -93,6 +93,8 @@ export default async function Home({ params: { lng } }) {
       <Head>
         <title>Coreano Básico Nível A1 - Pousando no Hangeul</title>
         <meta name="description" content="Aprenda coreano de forma rápida e divertida com o ebook Pousando no Hangeul." />
+        <link rel="icon" href="/logo-a1.ico" />
+      
       </Head>
       {/* Plano de fundo */}
       <div className={cn("absolute -z-10 inset-0 bg-cover bg-no-repeat md:bg-[url('/background-desktop.webp')] bg-[url('/background-01-mobile.webp')]")} />
@@ -105,7 +107,7 @@ export default async function Home({ params: { lng } }) {
               Pouse no <a className='text-logo-primary'>Universo</a> <a className='text-logo-secondary'>Coreano</a> e Aprenda de Forma Simples!
             </h1>
             <h2 className="mt-2 text-xl text-logo-secondary">
-              "Coreano Básico Nível A1 - Pousando no Hangeul"
+              Coreano Básico Nível A1 - Pousando no Hangeul
             </h2>
             <p className="mt-4 text-xl text-darkText pb-8">
               Você já imaginou aprender coreano de forma rápida e divertida, mesmo começando do zero? Agora é possível!
