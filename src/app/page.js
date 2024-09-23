@@ -116,7 +116,7 @@ export default async function Home({ params: { lng } }) {
       </section>
 
       {/* Destaques */}
-      <section className="bg-pastelBlue py-4 -mt-8 ">
+      <section className="bg-pastelBlue py-4 md:-mt-8 mt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-around text-darkText text-sm">
             <span className='flex font-medium uppercase'>
