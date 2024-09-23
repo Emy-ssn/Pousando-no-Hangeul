@@ -14,14 +14,10 @@ import { FaSortAlphaDown, FaComments, FaBookOpen, FaBook, FaAlignJustify, FaLand
 import { Culture, Hangul, Korea, Waver } from '@/icon'
 import { VscSymbolKeyword } from "react-icons/vsc"
 // Renomeando os ícones para os nomes usados no array
-const AlphabeticalSortAz = FaSortAlphaDown;
 const MessageCircle = FaComments;
 const BookOpenIcon = FaBookOpen;
 const BookIcon = FaBook;
-const AlignJustifyIcon = FaAlignJustify;
-const LandmarkIcon = FaLandmark;
 const GraduationCapIcon = FaGraduationCap;
-const FaListCheckIcon = FaListCheck
 import { FaListCheck } from "react-icons/fa6"
 // Definição do array topicos
 const topicos = [
@@ -82,8 +78,6 @@ const topicos = [
 ]
 
 
-
-
 export default async function Home({ params: { lng } }) {
   // const { t } = await translation(lng, 'mentoring')
 
@@ -120,8 +114,6 @@ export default async function Home({ params: { lng } }) {
           </div>
         </div>
       </section>
-
-
 
       {/* Destaques */}
       <section className="bg-pastelBlue py-4 -mt-8 ">
