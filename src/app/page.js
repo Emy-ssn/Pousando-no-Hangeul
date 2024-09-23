@@ -300,7 +300,7 @@ export default async function Home({ params: { lng } }) {
                   </li>
                 </ul>
                 <div className="mt-10 text-center">
-                  <Link legacyBehavior href={'https://pay.hotmart.com/T90814944T?_hi=eyJjaWQiOiIxNzI0OTQzODAwNjkyODg3OTQ3NDU1MjI0ODA5NTAwIiwiYmlkIjoiMTcyNDk0MzgwMDY5Mjg4Nzk0NzQ1NTIyNDgwOTUwMCIsInNpZCI6IjBkYzQ3OTQ5ZGE4MjQ4ODRhNmM3ZWE3ZGU3ZmRjZmZiIn0=.1726328910195&bid=1726328912944'}>
+                  <Link legacyBehavior href={'https://pay.hotmart.com/T90814944T'}>
                     <a className=" flex text-center items-center justify-center text-white z-10 relative px-8 border-2 h-14 bg-logo-light  drop-shadow-lg rounded-lg font-bold   transition duration-1000">
                       COMPRAR AGORA
                     </a>
