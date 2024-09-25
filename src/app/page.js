@@ -163,7 +163,6 @@ export default async function Home({ params: { lng } }) {
               </div>
             </div>
           </section>
-
         </div>
       </div>
 
@@ -193,11 +192,7 @@ export default async function Home({ params: { lng } }) {
                   </a>
                 </Link>
               </div>
-
-              <div>
-
-              </div>
-
+              <div/>
             </div>
           </div>
         </div>
@@ -260,7 +255,6 @@ export default async function Home({ params: { lng } }) {
             </a>
           </Link>
         </section> */}
-
 
       {/* Seção de Compra */}
       <div className='bg-white'>
