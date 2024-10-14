@@ -1,9 +1,6 @@
-// Importações necessárias
-// import Footer from '@/components/Footer'
+'use client'
 import Head from 'next/head'
-
 import Link from 'next/link'
-
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { FaCircleCheck, FaCreativeCommonsZero } from 'react-icons/fa6'
@@ -19,6 +16,8 @@ const BookOpenIcon = FaBookOpen;
 const BookIcon = FaBook;
 const GraduationCapIcon = FaGraduationCap;
 import { FaListCheck } from "react-icons/fa6"
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 // Definição do array topicos
 const topicos = [
   {
@@ -78,9 +77,11 @@ const topicos = [
 ]
 
 
-export default async function Home({ params: { lng } }) {
+export default function Home({ params }) {
   // const { t } = await translation(lng, 'mentoring')
-
+  const searchParams = useSearchParams();
+  const ref = searchParams.get('ref')
+ 
   return (
     <div className="  overflow-hidden">
       {/* Cabeçalho e metadados */}
@@ -294,7 +295,7 @@ export default async function Home({ params: { lng } }) {
                   </li>
                 </ul>
                 <div className="mt-10 text-center">
-                  <Link legacyBehavior href={'https://pay.hotmart.com/T90814944T'}>
+                  <Link legacyBehavior href={`https://pay.hotmart.com/T90814944T?bid=${ref}`}>
                     <a className=" flex text-center items-center justify-center text-white z-10 relative px-8 border-2 h-14 bg-logo-light  drop-shadow-lg rounded-lg font-bold   transition duration-1000">
                       COMPRAR AGORA
                     </a>
