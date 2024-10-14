@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 'use client'
+=======
+// Importações necessárias
+
+>>>>>>> 8c1717222d2d407dc758c932ebc88dd0ee8764bb
 import Head from 'next/head'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
