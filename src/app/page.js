@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 'use client'
-=======
-// Importações necessárias
-
->>>>>>> 8c1717222d2d407dc758c932ebc88dd0ee8764bb
 import Head from 'next/head'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -83,7 +78,6 @@ const topicos = [
 
 
 export default function Home({ params }) {
-  // const { t } = await translation(lng, 'mentoring')
   const searchParams = useSearchParams();
   const ref = searchParams.get('ref')
  
