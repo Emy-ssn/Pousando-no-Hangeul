@@ -18,6 +18,7 @@ const GraduationCapIcon = FaGraduationCap;
 import { FaListCheck } from "react-icons/fa6"
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useParams } from 'next/navigation'
+
 // Definição do array topicos
 const topicos = [
   {
@@ -75,7 +76,6 @@ const topicos = [
     icone: () => <GraduationCapIcon className="w-16 h-16 mb-4 text-logo-primary" />,
   },
 ]
-
 
 export default function Home({ params }) {
   const searchParams = useSearchParams();
