@@ -7,7 +7,7 @@ import { FaCircleCheck, FaCreativeCommonsZero } from 'react-icons/fa6'
 import { MdContentCopy, MdGroupWork } from "react-icons/md"
 import { PiChalkboardTeacherFill } from "react-icons/pi"
 import Testimonial from '@/components/ui/testimonial'
-import { FaSortAlphaDown, FaComments, FaBookOpen, FaBook, FaAlignJustify, FaLandmark, FaGraduationCap, } from 'react-icons/fa';
+import { FaComments, FaBookOpen, FaBook, FaAlignJustify, FaLandmark, FaGraduationCap, } from 'react-icons/fa';
 import { Culture, Hangul, Korea, Waver } from '@/icon'
 import { VscSymbolKeyword } from "react-icons/vsc"
 // Renomeando os ícones para os nomes usados no array
@@ -16,9 +16,8 @@ const BookOpenIcon = FaBookOpen;
 const BookIcon = FaBook;
 const GraduationCapIcon = FaGraduationCap;
 import { FaListCheck } from "react-icons/fa6"
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useParams } from 'next/navigation'
-
+import { useSearchParams, useRouter} from 'next/navigation'
+import ProductButton from '@/components/ui/productButton'
 // Definição do array topicos
 const topicos = [
   {
@@ -77,10 +76,17 @@ const topicos = [
   },
 ]
 
-export default function Home({ params }) {
-  const searchParams = useSearchParams();
-  const ref = searchParams.get('ref')
- 
+
+export default function Home() {
+  const searchParams = useSearchParams() || null;
+  const ref = searchParams?.get('ref') || ''
+  // const router = useRouter();
+  // const { ref } = router.query; // Aqui você obtém o parâmetro 'ref'
+  const products = [
+    { id: 1, name: "Livro de Coreano Basico nivel A2", image: "/inforOne.png", href: "https://pay.hotmart.com/M96014546X" },
+    { id: 2, name: "Cardeno de Exercícios de Alfabeto Coreano", image: "/inforTwo.png", href: "https://pay.hotmart.com/P93906664P" },
+  ]
+
   return (
     <div className="  overflow-hidden">
       {/* Cabeçalho e metadados */}
@@ -88,7 +94,7 @@ export default function Home({ params }) {
         <title>Coreano Básico Nível A1 - Pousando no Hangeul</title>
         <meta name="description" content="Aprenda coreano de forma rápida e divertida com o ebook Pousando no Hangeul." />
         <link rel="icon" href="/logo-a1.ico" />
-      
+
       </Head>
       {/* Plano de fundo */}
       <div className={cn("absolute -z-10 inset-0 bg-cover bg-no-repeat md:bg-[url('/background-desktop.webp')] bg-[url('/background-01-mobile.webp')]")} />
@@ -192,7 +198,7 @@ export default function Home({ params }) {
                   </a>
                 </Link>
               </div>
-              <div/>
+              <div />
             </div>
           </div>
         </div>
@@ -217,12 +223,12 @@ export default function Home({ params }) {
 
       <div className='bg-pastelPink'>
 
-      <div className={`bg-cover bg-[url('/flower.webp')] `}>
-        {/* Linhas crusadas */}
-        <div className="relative h-24  w-screen">
-          <div className="absolute overflow-hidden inset-0 bg-gradient-to-b from-pink-300/60 via-pink-300/20 to-transparent transform -rotate-3 scale-110"></div>
-          <div className="absolute overflow-hidden inset-0 bg-gradient-to-b from-pink-200/60 via-pink-200/20 to-transparent transform rotate-3 scale-110"></div>
-        </div>
+        <div className={`bg-cover bg-[url('/flower.webp')] `}>
+          {/* Linhas crusadas */}
+          <div className="relative h-24  w-screen">
+            <div className="absolute overflow-hidden inset-0 bg-gradient-to-b from-pink-300/60 via-pink-300/20 to-transparent transform -rotate-3 scale-110"></div>
+            <div className="absolute overflow-hidden inset-0 bg-gradient-to-b from-pink-200/60 via-pink-200/20 to-transparent transform rotate-3 scale-110"></div>
+          </div>
 
 
           {/* Depoimentos*/}
@@ -235,10 +241,10 @@ export default function Home({ params }) {
             </div>
           </section>
 
-        <div className="relative h-24 w-screen">
-          <div className="absolute overflow-hidden inset-0 bg-gradient-to-t from-pink-100/60 via-pink-300/20 to-transparente transform -rotate-3 scale-110"></div>
-          <div className="absolute overflow-hidden inset-0 bg-gradient-to-t from-pink-100/60 via-pink-200/20 to-transparente transform rotate-3 scale-110"></div>
-        </div>
+          <div className="relative h-24 w-screen">
+            <div className="absolute overflow-hidden inset-0 bg-gradient-to-t from-pink-100/60 via-pink-300/20 to-transparente transform -rotate-3 scale-110"></div>
+            <div className="absolute overflow-hidden inset-0 bg-gradient-to-t from-pink-100/60 via-pink-200/20 to-transparente transform rotate-3 scale-110"></div>
+          </div>
         </div>
 
       </div>
@@ -306,7 +312,22 @@ export default function Home({ params }) {
         </div>
       </div>
 
-      
+      <section className="  bg-logo-secondary" >
+        <div className='max-w-7xl m-auto text-center p-4 '>
+          <h1 className="text-3xl font-bold mb-6 text-center">Nossos Produtos</h1>
+          <div className="md:space-x-8 space-y-8">
+            {products.map((product) => (
+              <ProductButton
+                key={product.id}
+                imageSrc={product.image}
+                productName={product.name}
+                href={product.href}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* mentora */}
       <section className='flex z-50 bg-gradient-to-r -mt-1  bg-logo-secondary text-white py-4 px-4 justify-center items-center'>
         <div className='max-w-7xl m-auto justify-center items-center grid grid-cols-1 lg:grid-cols-2'>
@@ -333,6 +354,7 @@ export default function Home({ params }) {
 
       {/* Footer */}
 
+
       <footer className="bg-logo-primary text-white  py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
           <p>© 2024 Pousando no Hangeul. Todos os direitos reservados.</p>
@@ -342,3 +364,4 @@ export default function Home({ params }) {
     </div>
   )
 }
+
