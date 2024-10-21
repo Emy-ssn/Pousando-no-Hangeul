@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
+import FacebookPixel from '@/components/FacebookPixel'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,8 +29,8 @@ export default function RootLayout({ children }) {
         {/* Meta tags para compartilhar nas redes sociais */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/path/to/preview-image.jpg" />
-        <meta property="og:url" content="https://www.seusite.com" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://pousando-no-hangeul.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* Favicon */}
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
         <Suspense fallback={<div>Loading...</div>}>
         {children}
         </Suspense>
+        {/* <FacebookPixel/> */}
       </body>
     </html>
   );
